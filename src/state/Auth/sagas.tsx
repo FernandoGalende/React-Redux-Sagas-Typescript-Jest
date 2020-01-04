@@ -10,6 +10,18 @@ function* getToken(credentials:any) {
   }
 }
 
+function* setUser(credentials:any) {
+    try {
+        localStorage.setItem('user', credentials.content);        
+        const {jwt}  = yield contentAPI.getToken(credentials.content);
+        localStorage.setItem('jwt', jwt);
+        window.location.href = '/recomendation';
+    } catch (error) {
+        console.error('SET_USER_SAGA_ERROR: ', error)
+    }
+  }
+
 export default {
-    [actionTypes.GET_TOKEN]: getToken
+    [actionTypes.GET_TOKEN]: getToken,
+    [actionTypes.SET_USER]: setUser,
 }

@@ -1,9 +1,9 @@
 export default {
   token: '',
-  first_name: '',
+  firstName: '',
   address: '',
-  ocupation: '',
+  occupation: '',
   hasChildren: false,
-  childrenNumber: 0,
+  numberOfChildren: 0,
   email: ''
 };

@@ -3,11 +3,11 @@ import initialState from './initialState';
 
 export interface AuthState {
 	token: string;
-	first_name: string;
+	firstName: string;
 	address: string;
-	ocupation: string;
+	occupation: string;
 	hasChildren: boolean;
-	childrenNumber: number;
+	numberOfChildren: number;
 	email: string;
 }
 
@@ -20,6 +20,16 @@ export default function authReducer(
 			return {
 				...state,
 				token: action.content
+			};
+		case actions.SET_USER:
+			return {
+				...state,
+				firstName: action.content.first_name,
+				address: action.content.address,
+				occupation: action.content.ocupation,
+				hasChildren: action.content.hasChildren,
+				numberOfChildren: action.content.numberOfChildren,
+				email: action.content.email
 			};
 		default:
 			return state;
