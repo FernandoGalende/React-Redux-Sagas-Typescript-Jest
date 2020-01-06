@@ -7,7 +7,7 @@ type CardProps = {
 	periodicity: string;
 };
 
-const Card: React.FC<CardProps> = ({ type, amount, periodicity }) => {
+export const Card: React.FC<CardProps> = ({ type, amount, periodicity }) => {
 	const formatType = (type: string) => (
 		type.split('_').map((word) =>(
             word.charAt(0).toUpperCase() +
@@ -26,5 +26,3 @@ const Card: React.FC<CardProps> = ({ type, amount, periodicity }) => {
 		</div>
 	);
 };
-
-export default Card;

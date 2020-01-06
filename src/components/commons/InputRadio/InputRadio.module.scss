@@ -1,3 +1,13 @@
+@import '../../../styles/partials';
 .radioWrap {
-    margin: 1em;
+    margin: 0.5em;
+    span {
+        font-size: 0.85em;
+        color: $Black;
+        margin-left: 0.5em;
+    }
+}
+
+.container {
+    margin-top: 1em;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { InputType } from '../../commons/InputType/InputType.component';
-import { InputRadioGroup } from '../../commons/InputRadioGroup/InputRadioGroup.component';
+import { InputRadioGroup, InputType } from '../../commons';
 
 import { occupationOptions, childrenOptions } from '../../../assets/dictionary/InputRadioOptions';
 
@@ -22,7 +21,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			<InputType
 				type='text'
 				onChange={onChange}
-				label='What is your first Name?'
+				label="What's your first Name?"
 				inputId='firstName'
 				onNext={onNext}
                 buttonText='Next'
@@ -33,7 +32,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			<InputType
 				type='text'
 				onChange={onChange}
-				label='What is your Address?'
+				label="What's your address?"
 				inputId='address'
 				onNext={onNext}
                 buttonText='Next'
@@ -43,7 +42,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 		{currentStep === 3 && (
 			<InputRadioGroup
 				onChange={onChange}
-				label='What is your Ocupation?'
+				label="What's your occupation?"
 				inputId='occupation'
 				onNext={onNext}
 				buttonText='Next'
@@ -54,7 +53,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 		{currentStep === 4 && (
 			<InputRadioGroup
 				onChange={onChange}
-				label='Do you have children?'
+				label='Do you have any children?'
 				onNext={onNext}
 				inputId='hasChildren'
 				buttonText='Next'
@@ -66,7 +65,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			<InputType
 				type='number'
 				onChange={onChange}
-				label='How many children?'
+				label='How many children do you have?'
 				inputId='numberOfChildren'
 				onNext={onNext}
                 buttonText='Next'
@@ -78,7 +77,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 				type='text'
                 onChange={onChange}
                 inputId='email'
-				label='What is your email?'
+				label="What's your email?"
 				onNext={onNext}
                 buttonText='Submit'
                 isDisable={buttonDisable}

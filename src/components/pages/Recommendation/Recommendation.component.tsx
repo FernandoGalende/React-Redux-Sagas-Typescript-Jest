@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Recommendation.module.scss';
-import Card from '../../commons/Card/Card.component';
+import {Card} from '../../commons/index';
 import {Recomendation} from '../../../state/Auth/types'
 
 type RecommendationProps = {

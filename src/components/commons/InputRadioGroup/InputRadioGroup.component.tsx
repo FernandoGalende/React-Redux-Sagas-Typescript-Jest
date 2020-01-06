@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './InputRadioGroup.module.scss';
-import Input from '../InputRadio/InputRadio.component';
+import { InputRadio, Button } from '../index';
 
 type RadioOption = {
 	value: string | boolean | any;
@@ -34,20 +34,20 @@ export const InputRadioGroup: React.FC<InputRadioGroupProps> = ({
 				</label>
 				{options.length > 0 &&
 					options.map((option, idx) => (
-						<Input
-                            key={idx}
+						<InputRadio
+							key={idx}
 							option={option}
 							idx={idx}
 							inputId={inputId}
 							onChange={onChange}
 						/>
 					))}
-				<button
+				<Button
 					id='nextButton'
-					disabled={isDisable}
+					isDisable={isDisable}
 					onClick={() => onNext()}>
 					{buttonText}
-				</button>
+				</Button>
 			</div>
 		</div>
 	);

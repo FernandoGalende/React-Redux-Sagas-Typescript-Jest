@@ -1,0 +1,21 @@
+@import '../../../styles/partials';
+
+.button{
+    margin-top: 1em;
+    padding: 0.8em 3em;
+    border-color: $Primary;
+    color: $Primary;
+    font-weight: bold;
+}
+.button:hover{
+    padding: 0.8em 3em;
+    border-color: $Primary;
+    color: $Primary;
+    font-weight: bold;
+}
+
+.button:disabled{
+    border-color: $Grey10;
+    background-color: $Grey10;
+    color: $Grey40;
+}
