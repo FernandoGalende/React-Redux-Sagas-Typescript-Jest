@@ -1,0 +1,17 @@
+@import '../../../styles/partials';
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+    background-color: $White;
+}
+
+.wrap {
+    box-shadow: $CardShadow;
+    background-color: $Grey10;
+    padding: 2em;
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/partials';
+
+.container {
+    border: 1px solid $Grey10;
+    margin-top: 1em;
+    width: 30em;
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}

@@ -12,10 +12,10 @@ export const occupationOptions = [
 ];
 export const childrenOptions = [
 	{
-		value: true,
+		value: 'yes',
 		label: 'Yes'
 	},{
-		value: false,
+		value: 'no',
 		label: 'No'
 	}
 ];

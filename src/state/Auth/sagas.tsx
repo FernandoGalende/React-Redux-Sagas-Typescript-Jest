@@ -1,27 +1,24 @@
+import { put, call } from 'redux-saga/effects';
 import * as actionTypes from './actionTypes';
-
+import * as actions from './actionCreators';
 import { content as contentAPI } from '../../api';
 
-function* getToken(credentials:any) {
-  try {
-    const { token } = yield contentAPI.getToken(credentials);
-    localStorage.setItem('token', token);
-  } catch (error) {
-  }
+function* getRecommendationSaga({
+	content
+}: actionTypes.GetRecommendationAction){
+	try {
+		localStorage.clear();
+		yield put(actions.setUser(content));
+		localStorage.setItem('user', JSON.stringify(content));
+		const { jwt } = yield call(contentAPI.getToken, content);
+		localStorage.setItem('jwt', jwt);
+		const recommendation = yield contentAPI.getRecommendation(jwt);
+		yield put(actions.setRecommendation(recommendation));
+	} catch (error) {
+		console.error('GET_RECOMMENDATION_SAGA_ERROR: ', error);
+	}
 }
-
-function* setUser(credentials:any) {
-    try {
-        localStorage.setItem('user', credentials.content);        
-        const {jwt}  = yield contentAPI.getToken(credentials.content);
-        localStorage.setItem('jwt', jwt);
-        window.location.href = '/recomendation';
-    } catch (error) {
-        console.error('SET_USER_SAGA_ERROR: ', error)
-    }
-  }
 
 export default {
-    [actionTypes.GET_TOKEN]: getToken,
-    [actionTypes.SET_USER]: setUser,
-}
+	[actionTypes.GET_RECOMMENDATION]: getRecommendationSaga
+};

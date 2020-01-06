@@ -26,3 +26,13 @@ export const getToken = ({
 		})
 		.then((res) => res.data)
 		.catch(logError);
+
+export const getRecommendation = (token: string) => {
+    const AuthStr = 'Bearer '.concat(token); 
+	return axios
+		.get(
+			'https://challenge-dot-popsure-204813.appspot.com/recommendation',
+			{ headers: { Authorization: AuthStr } }
+		).then(res=> res.data)
+		.catch(logError);
+};

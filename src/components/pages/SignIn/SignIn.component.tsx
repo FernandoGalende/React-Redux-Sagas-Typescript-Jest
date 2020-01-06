@@ -1,36 +1,39 @@
 import React, { useState } from 'react';
 import { SignInFlow } from '../../layout/SignInFlow/SignInFlow.component';
 import { dataValidator } from '../../../assets/utils';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import './SignIn.module.scss';
 
-type MasterSignInProps = {
-	setUser: Function;
+type SignInProps = {
+    getRecomentation: Function;
 };
 
-const SignIn: React.FC<MasterSignInProps> = ({ setUser }) => {
+const SignIn: React.FC<SignInProps & RouteComponentProps> = ({ getRecomentation, history }) => {
 	const [ currentStep, setStep ] = useState(1);
 	const [ buttonDisable, setButtonDisable ] = useState(true);
 	const [ user, setUserState ] = useState({
 		firstName: '',
 		address: '',
 		occupation: '',
-		hasChildren: false,
+		hasChildren: 'no',
 		numberOfChildren: 0,
 		email: ''
 	});
 
 	const handleFormFlow = () => {
 		if (currentStep === 6) {
-			setUser(user);
+            getRecomentation(user);
+            history.push('/recommendation')
 			return;
-		} else if (currentStep === 4 && !user.hasChildren) {
+		} else if (currentStep === 4 && user.hasChildren === 'no') {
 			setStep(6);
 			setButtonDisable(true);
 			return;
+		} else {
+			setStep(currentStep + 1);
+			setButtonDisable(true);
 		}
-		setStep(currentStep + 1);
-		setButtonDisable(true);
 	};
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,4 +55,4 @@ const SignIn: React.FC<MasterSignInProps> = ({ setUser }) => {
 	);
 };
 
-export default SignIn;
+export default withRouter(SignIn);

@@ -1,7 +1,6 @@
 import React from 'react';
 import { InputType } from '../../commons/InputType/InputType.component';
 import { InputRadioGroup } from '../../commons/InputRadioGroup/InputRadioGroup.component';
-import styles from './SignInFlow.module.scss';
 
 import { occupationOptions, childrenOptions } from '../../../assets/dictionary/InputRadioOptions';
 
@@ -18,7 +17,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
     currentStep,
     buttonDisable
 }) => (
-	<div className={styles.SignInGroup}>
+	<div>
 		{currentStep === 1 && (
 			<InputType
 				type='text'

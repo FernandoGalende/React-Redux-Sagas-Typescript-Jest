@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import styles from './InputRadio.module.scss'
+
 type RadioOption = {
 	value: string | boolean | any;
 	label: string;
@@ -16,7 +18,7 @@ const InputRadio: React.FC<InputRadioProps> = ({
 	inputId,
 	onChange
 }) => (
-	<Fragment>
+	<div className={styles.radioWrap}>
 		<input
 			data-testid='input-test'
 			type='radio'
@@ -25,7 +27,7 @@ const InputRadio: React.FC<InputRadioProps> = ({
 			onChange={(evt) => onChange(evt)}
 		/>
 		<span>{option.label}</span>
-	</Fragment>
+	</div>
 );
 
 export default InputRadio;

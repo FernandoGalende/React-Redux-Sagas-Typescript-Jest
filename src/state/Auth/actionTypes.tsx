@@ -1,22 +1,24 @@
-export const GET_TOKEN = 'GET_TOKEN';
-export interface GetTokenAction {
-    type: typeof GET_TOKEN;
-    content: any
+import {User, Recomendation} from './types'
+
+export const GET_RECOMMENDATION = 'GET_RECOMMENDATION';
+export interface GetRecommendationAction {
+    type: typeof GET_RECOMMENDATION;
+    content: User;
 }
 
 export const SET_USER = 'SET_USER';
 export interface SetUserAction {
     type: typeof SET_USER;
-    content: any
+    content: User
 }
 
-export const SET_TOKEN = 'SET_TOKEN';
-export interface SetTokenAction {
-    type: typeof SET_TOKEN;
-    content: string;
+export const SET_RECOMMENDATION = 'SET_RECOMMENDATION';
+export interface SetRecommendationAction {
+    type: typeof SET_RECOMMENDATION;
+    content: Recomendation[]
 }
 
 export type AuthAction =
-  | GetTokenAction
-  | SetTokenAction
+  | GetRecommendationAction
+  | SetRecommendationAction
   | SetUserAction;
