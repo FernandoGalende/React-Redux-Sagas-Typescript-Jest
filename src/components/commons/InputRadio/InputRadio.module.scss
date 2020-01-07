@@ -10,4 +10,7 @@
 
 .container {
     margin-top: 1em;
+    @include mobile {
+        margin-top: 0;
+    }
 }

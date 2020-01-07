@@ -8,10 +8,24 @@
 	justify-content: center;
     flex-direction: column;
     background-color: $White;
+    @include mobile {
+        h1 {
+            font-size: 15px;
+        }
+        .cardsWrap {
+            margin-top: 20px;
+        }
+    }
 }
+
 
 .wrap {
     box-shadow: $CardShadow;
     background-color: $Grey10;
     padding: 2em;
+    @include mobile {
+        width: 90%;
+        height: 20%;
+        padding: 5px; 
+    }
 }

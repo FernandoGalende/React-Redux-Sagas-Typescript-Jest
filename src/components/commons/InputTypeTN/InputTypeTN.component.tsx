@@ -27,7 +27,7 @@ export const InputTypeTextNumber: React.FC<InputTypeTextNumberProps> = ({
 				<label data-testid='labelTN-test' htmlFor='input'>
 					{label}
 				</label>
-				<div>
+				<div className={styles.inputButtonWrap}>
 					<input
 						data-testid='inputTN-text'
 						type={type}

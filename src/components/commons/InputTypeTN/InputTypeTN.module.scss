@@ -1,19 +1,28 @@
+@import '../../../styles/partials';
+
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    .wrap {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        height: 5em;
-    }
-    input {
-        width: 30em;
-        height: 3em;
-        margin-top: 2em;
-    }
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	.wrap {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+		height: 5em;
+	}
+	input {
+		width: 30em;
+		height: 3em;
+		margin-top: 2em;
+	}
+	.inputButtonWrap {
+		@include mobile {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
 }
