@@ -8,7 +8,6 @@ type RadioOption = {
 
 type InputRadioProps = {
 	option: RadioOption;
-	idx: number;
 	inputId: string;
 	onChange: Function;
 };
@@ -21,7 +20,7 @@ export const InputRadio: React.FC<InputRadioProps> = ({
 	<div className={styles.container}>
 		<div className={styles.radioWrap}>
 			<input
-				data-testid='input-test'
+				data-testid={`input-test-${option.value}`}
 				type='radio'
 				name={inputId}
 				value={option.value}

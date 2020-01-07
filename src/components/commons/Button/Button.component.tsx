@@ -15,6 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
 	children
 }) => (
 	<button
+        data-testid='button-test'
 		className={styles.button}
 		id={id}
 		disabled={isDisable}

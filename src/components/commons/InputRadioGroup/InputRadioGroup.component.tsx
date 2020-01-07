@@ -27,7 +27,7 @@ export const InputRadioGroup: React.FC<InputRadioGroupProps> = ({
 	isDisable = true
 }) => {
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} data-testid='inputGroup-test'>
 			<div className={styles.wrap}>
 				<label data-testid='label-test' htmlFor='input'>
 					{label}
@@ -37,7 +37,6 @@ export const InputRadioGroup: React.FC<InputRadioGroupProps> = ({
 						<InputRadio
 							key={idx}
 							option={option}
-							idx={idx}
 							inputId={inputId}
 							onChange={onChange}
 						/>

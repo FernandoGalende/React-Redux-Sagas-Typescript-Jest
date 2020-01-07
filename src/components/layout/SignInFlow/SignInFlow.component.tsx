@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputRadioGroup, InputType } from '../../commons';
+import { InputRadioGroup, InputTypeTextNumber } from '../../commons';
 
 import { occupationOptions, childrenOptions } from '../../../assets/dictionary/InputRadioOptions';
 
@@ -18,7 +18,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 }) => (
 	<div>
 		{currentStep === 1 && (
-			<InputType
+			<InputTypeTextNumber
 				type='text'
 				onChange={onChange}
 				label="What's your first Name?"
@@ -29,7 +29,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			/>
 		)}
 		{currentStep === 2 && (
-			<InputType
+			<InputTypeTextNumber
 				type='text'
 				onChange={onChange}
 				label="What's your address?"
@@ -62,7 +62,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			/>
 		)}
 		{currentStep === 5 && (
-			<InputType
+			<InputTypeTextNumber
 				type='number'
 				onChange={onChange}
 				label='How many children do you have?'
@@ -73,7 +73,7 @@ export const SignInFlow: React.FC<SignInFlowProps> = ({
 			/>
 		)}
 		{currentStep === 6 && (
-			<InputType
+			<InputTypeTextNumber
 				type='text'
                 onChange={onChange}
                 inputId='email'

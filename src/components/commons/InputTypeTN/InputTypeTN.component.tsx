@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Button } from '../index'
-import styles from './InputType.module.scss';
+import styles from './InputTypeTN.module.scss';
 
-type InputTypeProps = {
+type InputTypeTextNumberProps = {
 	onChange: Function;
 	onNext: Function;
 	label: string;
@@ -12,7 +12,7 @@ type InputTypeProps = {
 	isDisable: boolean;
 };
 
-export const InputType: React.FC<InputTypeProps> = ({
+export const InputTypeTextNumber: React.FC<InputTypeTextNumberProps> = ({
 	onChange,
 	onNext,
 	label,
@@ -22,14 +22,14 @@ export const InputType: React.FC<InputTypeProps> = ({
 	isDisable = true
 }) => (
 	<Fragment>
-		<div className={styles.container}>
+		<div className={styles.container} data-testid='inputTN-test'>
 			<div className={styles.wrap}>
-				<label data-testid='label-test' htmlFor='input'>
+				<label data-testid='labelTN-test' htmlFor='input'>
 					{label}
 				</label>
 				<div>
 					<input
-						data-testid='input-test'
+						data-testid='inputTN-text'
 						type={type}
 						id={inputId}
 						name={inputId}
