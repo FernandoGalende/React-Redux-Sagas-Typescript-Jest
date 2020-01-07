@@ -28,14 +28,13 @@ describe('<InputRadio />', () => {
 		expect(container).toMatchSnapshot();
     });
 
-    it('should be exist', () => {
+    it('should exist', () => {
 		expect(getByTestId(`input-test-${fakeOption.value}`)).toBeInTheDocument();
     });
     
-    it('click on input radio should be fire mock function', () => {
+    it('should fire mock function', () => {
 		const button = getByTestId(`input-test-${fakeOption.value}`);
 		fireEvent.click(button);
 		expect(mockFuntion).toBeCalled();
 	});
-
 });

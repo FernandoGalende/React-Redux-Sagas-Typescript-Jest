@@ -26,7 +26,7 @@ describe('<Button />', () => {
 		expect(container).toMatchSnapshot();
     });
 
-    it('should be exist', () => {
+    it('should exist', () => {
 		expect(getByTestId('button-test')).toBeInTheDocument();
     });
     
@@ -34,7 +34,7 @@ describe('<Button />', () => {
 		expect(getByTestId('button-test')).toHaveTextContent('click here!');
     });
     
-    it('click should be fire mock function', () => {
+    it('should fire mock function', () => {
 		const button = getByTestId('button-test');
 		fireEvent.click(button);
 		expect(mockFuntion).toBeCalled();
@@ -58,7 +58,7 @@ describe('<Button disable={true} />', () => {
 		getByTestId = queries.getByTestId;
     });
     
-    it('click should not be fire mock function', () => {
+    it('should not be fire mock function', () => {
 		const button = getByTestId('button-test');
 		fireEvent.click(button);
 		expect(mockFuntion).not.toBeCalled();

@@ -9,14 +9,11 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ type, amount, periodicity }) => {
 	const formatType = (type: string) =>
-		type
-			.split('_')
-			.map(
-				(word) =>
-					word.charAt(0).toUpperCase() +
-					word.substring(1).toLowerCase()
-			)
-			.join(' ');
+		type.split('_').map(
+            (word) =>
+                word.charAt(0).toUpperCase() +
+                word.substring(1).toLowerCase()
+		).join(' ');
 
 	return (
 		<div className={styles.container} data-testid='card-test'>

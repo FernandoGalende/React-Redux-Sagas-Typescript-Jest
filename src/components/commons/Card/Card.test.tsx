@@ -31,7 +31,8 @@ describe('<Card />', () => {
     
 	it('should card exist in the document', () => {
 		expect(getByTestId('card-test')).toBeInTheDocument();
-	});
+    });
+    
 	it('should format type text', () => {
 		expect(getByTestId('card-type-test')).toHaveTextContent('Fake Type');
 	});

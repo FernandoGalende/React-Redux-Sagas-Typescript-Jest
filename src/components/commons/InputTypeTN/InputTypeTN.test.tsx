@@ -29,7 +29,7 @@ describe('<InputTypeTN />', () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it('should be exist', () => {
+	it('should exist', () => {
 		expect(getByTestId('inputTN-test')).toBeInTheDocument();
 	});
 
@@ -37,10 +37,9 @@ describe('<InputTypeTN />', () => {
         expect(getByTestId('labelTN-test')).toHaveTextContent('label text');
     });	
 
-	it('text on input should fire onChange function', () => {
+	it('should fire onChange function', () => {
         const input = getByTestId('inputTN-text');        
         fireEvent.change(input, {target: {value: 'a'}});
 		expect(mockFuntion).toHaveBeenCalledTimes(1);
 	});
-
 });

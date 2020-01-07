@@ -40,7 +40,7 @@ describe('<InputRadioGroup />', () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it('should be exist', () => {
+	it('should exist', () => {
 		expect(getByTestId('inputGroup-test')).toBeInTheDocument();
 	});
 
@@ -50,13 +50,13 @@ describe('<InputRadioGroup />', () => {
 		).toBeInTheDocument();
 	});
 
-	it('click on first input fire onChange event', () => {
+	it('should fire onChange event option one', () => {
 		const button = getByTestId(`input-test-${fakeOptions[0].value}`);
 		fireEvent.click(button);
 		expect(mockFuntion).toBeCalled();
 	});
 
-	it('click on second input fire onChange event', () => {
+	it('should fire onChange event option two', () => {
 		const button = getByTestId(`input-test-${fakeOptions[1].value}`);
 		fireEvent.click(button);
 		expect(mockFuntion).toBeCalled();
