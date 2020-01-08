@@ -29,7 +29,7 @@ npm test
 
 ### Public url
 
-https://orbitaladsandfernandogalende.firebaseapp.com/
+https://fernando-popsure.firebaseapp.com/
 
 
 ## Tecnologies
