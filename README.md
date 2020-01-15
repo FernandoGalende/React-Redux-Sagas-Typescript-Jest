@@ -1,4 +1,3 @@
-# popsure coding test
 ## Fernando Galende
 
 ### What you need
@@ -26,10 +25,6 @@ npm start
 ```
 npm test
 ```
-
-### Public url
-
-https://fernando-popsure.firebaseapp.com/
 
 
 ## Tecnologies
